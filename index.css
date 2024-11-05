@@ -1,115 +1,105 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Estilos para el ListadoComponent */
 
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('your-background-image.jpg') no-repeat center center/cover;
-    font-family: 'Poppins', sans-serif;
-}
-
-.container {
-    position: relative;
-}
-
-.login-box {
-    position: relative;
-    width: 350px;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-    text-align: center;
-}
-
-.login-box h2 {
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.input-box {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.input-box input {
-    width: 100%;
+.listado-container {
+    flex: 0 0 300px; /* Fija el ancho de la barra lateral */
+    max-width: 300px;
+  }
+  
+  .lista-container {
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 1px solid #ccc;
     padding: 10px;
-    background: none;
-    border: none;
-    border-bottom: 2px solid #fff;
-    color: #fff;
-    outline: none;
-    font-size: 18px;
-}
-
-.input-box label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    color: #fff;
-    pointer-events: none;
-    transition: 0.5s;
-}
-
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #03a9f4;
-    font-size: 12px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: #fff;
-    color: #000;
-    font-size: 18px;
-    border-radius: 5px;
+  }
+  
+  ul li {
     cursor: pointer;
-    transition: 0.3s;
-}
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Responsivo para ListadoComponent */
+  @media (max-width: 768px) {
+    .listado-container {
+      flex: 1;
+      max-width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+    }
+  }
 
-button:hover {
-    background: #03a9f4;
-    color: #fff;
-}
+  
 
-.social-login {
+
+
+  /* Estilos para el EtiquetaComponent */
+
+.etiqueta-container {
+    flex: 1;
+    margin-top: 20px;
+  }
+  
+  .custom-table {
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+  
+  /* Responsivo para EtiquetaComponent */
+  @media (max-width: 768px) {
+    .etiqueta-container {
+      flex: 1;
+      max-width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+      margin-top: 20px;
+    }
+  }
+
+  
+
+
+  /* Estilos para el FormularioComponent */
+
+.form-container {
+    max-height: 345px;
+    overflow-y: auto;
+  }
+  
+  input {
+    width: 100%;
+    height: 50px;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .button-container {
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
-}
-
-.social-login button {
-    width: 48%;
-    padding: 10px;
+    gap: 30px;
+  }
+  
+  .button-container button {
+    flex: 1;
+    padding: 15px 30px;
     font-size: 16px;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.social-login button.google {
-    background: #db4437;
-}
-
-.social-login button.facebook {
-    background: #3b5998;
-}
-
-.social-login button:hover {
-    opacity: 0.8;
-}
+  }
+  
+  /* Responsivo para FormularioComponent */
+  @media (max-width: 768px) {
+    .button-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .button-container button {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    input {
+      height: 45px;
+    }
+    
+    .button-container button {
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+  }
+  
